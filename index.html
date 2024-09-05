@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<head>
+
+<!-- title -->
+<title>GAME TITLE</title>
+
+<!-- emoji favicon -->
+<link rel=icon href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😀</text></svg>">
+
+<!-- no resize -->
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<!-- CSS -->
+<style>
+
+/* emoji polyfill */
+
+@font-face{
+  font-family: emoji;
+  src: url(//xem.github.io/unicode13/Twemoji.ttf);
+}
+
+/* disable text selection + tap highlight */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Remove body margins */
+
+body { 
+  margin: 0;
+}
+</style>
+</head>
+<body>
+
+YOUR CONTENT HERE
+
+<!-- JS -->
+<script>
+
+// State
+// =====
+
+// (ex: 0: title screen, 1: game, 2: score screen)
+
+state = 0;
+
+// Prevent long touch effect on mobile
+// ===================================
+
+oncontextmenu = e => { e.preventDefault() }
+
+// Keyboard inputs
+// ===============
+
+// - u, l, r, d: WASD/ZQSD/arrow keys
+// - s: space
+// - S: shift
+// - E: enter
+// - R, T, Y, X, C, V, B, N, F, J: letters
+// Ex: if(keys.r) { /* move to the right */ }
+
+keys = {};
+onkeydown=onkeyup = e => {
+  keys['E**S***************s****lurd************************lBCr*F***J***N**lRdT*VuXYu'[e.which-13]]=e.type[5]
+}
+
+// Game loop
+// =========
+
+setInterval(() => {
+  if(state == 0){
+    // state 0 animation ...
+  }
+  else if(state == 1){
+    // state 1 animation ...
+  }
+  // ...
+}, 16); // 60 fps
+
+// Click handler
+// =============
+
+onclick = e => {
+  if(state == 0){
+    // state 0 clicks ...
+  }
+  else if(state == 1){
+    // state 1 clicks ...
+  }
+  // ...
+}
+</script>
+</body>
